@@ -1,3 +1,7 @@
+/* =========================================================
+   LINKORA — CSS COMPLET
+========================================================= */
+
 * {
     box-sizing: border-box;
     margin: 0;
@@ -12,6 +16,12 @@
     --text: #17151f;
     --muted: #777481;
     --border: #e8e5ef;
+    --soft: #f1eff6;
+}
+
+html {
+    width: 100%;
+    overflow-x: hidden;
 }
 
 body {
@@ -20,6 +30,7 @@ body {
     color: var(--text);
     min-height: 100vh;
     padding-bottom: 90px;
+    overflow-x: hidden;
 }
 
 a {
@@ -33,16 +44,23 @@ button {
     font: inherit;
 }
 
-/* HEADER */
+
+/* =========================================================
+   HEADER
+========================================================= */
 
 .header {
+    width: 100%;
     height: 76px;
     background: var(--white);
     border-bottom: 1px solid var(--border);
+
     display: flex;
     align-items: center;
     justify-content: space-between;
+
     padding: 0 24px;
+
     position: sticky;
     top: 0;
     z-index: 100;
@@ -52,6 +70,7 @@ button {
     display: flex;
     align-items: center;
     gap: 12px;
+
     font-size: 25px;
     font-weight: 800;
 }
@@ -59,38 +78,51 @@ button {
 .logo-icon {
     width: 46px;
     height: 46px;
+
     border-radius: 14px;
+
     background: var(--purple);
     color: white;
+
     display: flex;
     align-items: center;
     justify-content: center;
+
     font-size: 25px;
     font-weight: bold;
 }
 
 .header-actions {
     display: flex;
+    align-items: center;
     gap: 12px;
 }
 
 .header-button {
     width: 46px;
     height: 46px;
+
     border-radius: 50%;
+
     background: #f1eff6;
+
     display: flex;
     align-items: center;
     justify-content: center;
+
     font-size: 22px;
 }
 
-/* CONTENU */
+
+/* =========================================================
+   CONTENU
+========================================================= */
 
 .container {
     width: 100%;
     max-width: 720px;
-    margin: auto;
+    margin: 0 auto;
+
     padding: 28px 18px;
 }
 
@@ -105,68 +137,138 @@ button {
     margin-bottom: 28px;
 }
 
-/* CARTES */
+
+/* =========================================================
+   INTRODUCTION
+========================================================= */
+
+.welcome-section {
+    margin-bottom: 28px;
+}
+
+.welcome-section h1 {
+    font-size: 36px;
+    line-height: 1.15;
+    margin-bottom: 10px;
+}
+
+.welcome-section p {
+    color: var(--muted);
+    font-size: 19px;
+    line-height: 1.4;
+}
+
+
+/* =========================================================
+   CARTES
+========================================================= */
 
 .card {
     background: var(--white);
     border: 1px solid var(--border);
     border-radius: 24px;
+
     padding: 22px;
+
     margin-bottom: 18px;
-    box-shadow: 0 5px 20px rgba(50, 30, 80, 0.05);
+
+    box-shadow:
+        0 5px 20px rgba(50, 30, 80, 0.05);
 }
 
-/* CREATION PUBLICATION */
+
+/* =========================================================
+   CRÉATION PUBLICATION
+========================================================= */
 
 .create-post {
-    display: block;
     width: 100%;
+    display: block;
 }
 
+/* Ligne avatar + champ */
+
 .create-post-top {
+    width: 100%;
+
     display: flex;
     align-items: center;
+
     gap: 14px;
-    width: 100%;
 }
+
+/* Avatar */
 
 .avatar {
     width: 48px;
     height: 48px;
     min-width: 48px;
+
     border-radius: 50%;
+
     background: var(--purple);
     color: white;
+
     display: flex;
     align-items: center;
     justify-content: center;
+
     font-size: 20px;
     font-weight: bold;
 }
 
+/* IMPORTANT :
+   Le bouton "Quoi de neuf ?" doit rester petit.
+*/
+
 .post-input-button {
     flex: 1;
+
     width: 100%;
-    height: 82px;
+    height: 54px;
+
     border: 1px solid var(--border);
     outline: none;
-    background: #f7f6fb;
+
+    background: #f8f7fb;
+
     border-radius: 18px;
-    padding: 0 18px;
-    font-size: 17px;
-    color: var(--muted);
+
+    padding: 0 20px;
+
     text-align: left;
-    display: flex;
-    align-items: center;
+
+    font-size: 17px;
+    font-weight: 600;
+
+    color: #777481;
+
+    overflow: hidden;
 }
 
+/* Effet quand on touche le champ */
+
+.post-input-button:active {
+    background: #f1eff6;
+}
+
+
+/* =========================================================
+   BOUTONS PHOTO / VIDÉO / HUMEUR / PUBLIER
+========================================================= */
+
 .post-actions {
+    width: 100%;
+
     display: flex;
     align-items: center;
+
     gap: 10px;
+
     margin-top: 15px;
-    width: 100%;
+
     overflow-x: auto;
+
     scrollbar-width: none;
 }
 
@@ -175,142 +277,444 @@ button {
 }
 
 .post-actions button {
-    background: #f1eff6;
-    color: var(--text);
+    height: 48px;
+
+    flex: 0 0 auto;
+
     border-radius: 18px;
-    padding: 11px 18px;
+
+    padding: 0 18px;
+
+    background: #f1eff6;
+
+    color: #55525f;
+
+    font-size: 16px;
+    font-weight: 600;
+
     white-space: nowrap;
-    flex-shrink: 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    gap: 7px;
 }
+
+.post-actions button span {
+    display: inline;
+}
+
+.post-actions button:hover {
+    background: #e9e5f4;
+}
+
+/* Bouton Publier */
 
 .post-actions .publish-button {
-    margin-left: auto;
     background: var(--purple);
     color: white;
+
+    padding: 0 22px;
+
     font-weight: bold;
-    }
-
-/* MOMENTS */
-
-.section-title {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin: 28px 0 14px;
 }
 
-.section-title h2 {
+.post-actions .publish-button:hover {
+    background: #6d28d9;
+}
+
+
+/* =========================================================
+   MOMENTS
+========================================================= */
+
+.moments-section {
+    width: 100%;
+    margin-top: 28px;
+}
+
+.section-heading {
+    width: 100%;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    margin-bottom: 14px;
+}
+
+.section-heading h2 {
     font-size: 25px;
 }
 
-.section-title a {
+.section-heading a {
     color: var(--purple);
     font-weight: bold;
+    font-size: 16px;
 }
 
-.moments {
+.moments-list {
+    width: 100%;
+
     display: flex;
     gap: 12px;
+
     overflow-x: auto;
+
     padding-bottom: 5px;
+
+    scrollbar-width: none;
 }
 
-.moment {
-    min-width: 135px;
-    height: 190px;
+.moments-list::-webkit-scrollbar {
+    display: none;
+}
+
+
+/* Cartes moments */
+
+.moment-card {
+    flex: 0 0 180px;
+
+    height: 275px;
+
     border-radius: 22px;
-    background: linear-gradient(
-        160deg,
-        #8b5cf6,
-        #6d28d9
-    );
+
+    background:
+        linear-gradient(
+            160deg,
+            #8b5cf6,
+            #6d28d9
+        );
+
     color: white;
+
     display: flex;
     flex-direction: column;
+
     align-items: center;
-    justify-content: center;
+    justify-content: flex-end;
+
+    padding: 18px;
+
     font-weight: bold;
+
+    position: relative;
+
+    overflow: hidden;
 }
 
-.moment.add {
-    background: white;
-    color: var(--text);
-    border: 1px solid var(--border);
-}
+/* Avatar dans moment */
 
-.moment-icon {
-    width: 65px;
-    height: 65px;
+.moment-avatar {
+    position: absolute;
+
+    top: 18px;
+    left: 18px;
+
+    width: 50px;
+    height: 50px;
+
     border-radius: 50%;
+
     background: white;
     color: var(--purple);
+
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 28px;
-    margin-bottom: 12px;
+
+    font-size: 20px;
+    font-weight: bold;
 }
 
-/* PUBLICATION */
+.moment-card span {
+    width: 100%;
 
-.post-header {
+    font-size: 17px;
+    font-weight: bold;
+}
+
+
+/* Moment Ajouter */
+
+.create-moment {
+    background: white;
+
+    color: var(--text);
+
+    border: 1px solid var(--border);
+
+    align-items: flex-start;
+    justify-content: flex-end;
+}
+
+.moment-add {
+    position: absolute;
+
+    top: 20px;
+    left: 22px;
+
+    width: 58px;
+    height: 58px;
+
+    border-radius: 50%;
+
+    background: var(--purple);
+    color: white;
+
     display: flex;
     align-items: center;
-    gap: 12px;
+    justify-content: center;
+
+    font-size: 34px;
 }
 
-.post-user {
-    font-weight: bold;
+.create-moment strong {
+    width: 100%;
+
     font-size: 17px;
 }
 
-.post-date {
+
+/* =========================================================
+   PUBLICATIONS
+========================================================= */
+
+.feed-section {
+    width: 100%;
+    margin-top: 34px;
+}
+
+.feed-section > .section-heading {
+    margin-bottom: 14px;
+}
+
+.filter-button {
+    background: #f1eff6;
+    color: var(--purple);
+
+    border-radius: 18px;
+
+    padding: 11px 16px;
+
+    font-size: 14px;
+    font-weight: bold;
+}
+
+
+/* Publication */
+
+.post-card {
+    width: 100%;
+
+    background: white;
+
+    border: 1px solid var(--border);
+
+    border-radius: 24px;
+
+    overflow: hidden;
+
+    margin-bottom: 18px;
+
+    box-shadow:
+        0 5px 20px rgba(50, 30, 80, 0.05);
+}
+
+
+/* En-tête publication */
+
+.post-header {
+    width: 100%;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 22px;
+}
+
+.post-user {
+    display: flex;
+    align-items: center;
+
+    gap: 12px;
+}
+
+.post-user strong {
+    display: block;
+
+    font-size: 17px;
+}
+
+.post-user small {
+    display: block;
+
     color: var(--muted);
+
     font-size: 13px;
+
     margin-top: 4px;
 }
 
-.post-content {
-    font-size: 18px;
-    line-height: 1.6;
-    margin: 25px 0;
-}
-
-.post-footer {
-    border-top: 1px solid var(--border);
-    padding-top: 14px;
-    display: flex;
-    gap: 25px;
-}
-
-.post-footer button {
+.more-button {
     background: transparent;
+
     color: var(--muted);
+
+    font-size: 20px;
 }
 
-/* NAVIGATION */
 
-.bottom-nav {
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    height: 78px;
-    background: rgba(255,255,255,0.96);
-    backdrop-filter: blur(15px);
+/* Contenu */
+
+.post-content {
+    padding: 0 22px 22px;
+
+    font-size: 18px;
+
+    line-height: 1.6;
+}
+
+.post-content p {
+    margin: 0;
+}
+
+
+/* Statistiques */
+
+.post-stats {
+    display: flex;
+    gap: 18px;
+
+    padding: 0 22px 16px;
+
+    color: var(--muted);
+
+    font-size: 14px;
+}
+
+
+/* Boutons publication */
+
+.post-buttons {
     border-top: 1px solid var(--border);
+
     display: flex;
     align-items: center;
     justify-content: space-around;
+
+    padding: 13px 10px;
+}
+
+.post-buttons button {
+    background: transparent;
+
+    color: var(--muted);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    gap: 5px;
+
+    font-size: 14px;
+}
+
+
+/* Aperçu commentaire */
+
+.comment-preview {
+    display: flex;
+    gap: 10px;
+
+    padding: 15px 22px;
+
+    background: #faf9fc;
+}
+
+.small-avatar {
+    width: 36px;
+    height: 36px;
+    min-width: 36px;
+
+    border-radius: 50%;
+
+    background: var(--purple);
+    color: white;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-weight: bold;
+}
+
+.comment-preview strong {
+    font-size: 14px;
+}
+
+.comment-preview p {
+    margin-top: 3px;
+
+    color: var(--muted);
+
+    font-size: 14px;
+}
+
+.view-comments {
+    width: 100%;
+
+    background: white;
+
+    color: var(--purple);
+
+    text-align: left;
+
+    padding: 14px 22px;
+
+    font-weight: bold;
+}
+
+
+/* =========================================================
+   NAVIGATION BAS
+========================================================= */
+
+.bottom-nav {
+    position: fixed;
+
+    bottom: 0;
+    left: 0;
+    right: 0;
+
+    height: 78px;
+
+    background: rgba(255, 255, 255, 0.97);
+
+    backdrop-filter: blur(15px);
+
+    border-top: 1px solid var(--border);
+
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+
     z-index: 200;
 }
 
 .nav-item {
     display: flex;
     flex-direction: column;
+
     align-items: center;
+
     gap: 5px;
+
     color: var(--muted);
+
     font-size: 12px;
 }
 
@@ -323,103 +727,166 @@ button {
     font-weight: bold;
 }
 
+
+/* Gros bouton + */
+
 .create-nav {
     width: 62px;
     height: 62px;
+
     border-radius: 20px;
+
     background: var(--purple);
+
     color: white;
+
     display: flex;
     align-items: center;
     justify-content: center;
+
     font-size: 35px;
+
     margin-top: -28px;
-    box-shadow: 0 10px 25px rgba(124,58,237,.35);
+
+    box-shadow:
+        0 10px 25px rgba(124, 58, 237, 0.35);
 }
 
-/* MOBILE */
+
+/* =========================================================
+   AUTHENTIFICATION
+========================================================= */
+
+.auth-page {
+    min-height: 100vh;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 30px 15px;
+}
+
+.auth-card {
+    width: 100%;
+    max-width: 430px;
+
+    background: white;
+
+    border-radius: 25px;
+
+    padding: 30px;
+
+    box-shadow:
+        0 8px 30px rgba(0, 0, 0, 0.08);
+
+    text-align: center;
+}
+
+.auth-logo {
+    width: 70px;
+    height: 70px;
+
+    margin: 0 auto 20px;
+
+    border-radius: 20px;
+
+    background: var(--purple);
+
+    color: white;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-size: 35px;
+    font-weight: bold;
+}
+
+.auth-card h1 {
+    font-size: 30px;
+    margin-bottom: 10px;
+}
+
+.auth-card p {
+    color: var(--muted);
+    margin-bottom: 25px;
+}
+
+.auth-card form {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+}
+
+.auth-card input {
+    width: 100%;
+
+    padding: 15px;
+
+    border: 1px solid var(--border);
+
+    border-radius: 14px;
+
+    background: var(--bg);
+
+    font-size: 16px;
+
+    outline: none;
+}
+
+.auth-card input:focus {
+    border-color: var(--purple);
+}
+
+.auth-card button {
+    width: 100%;
+
+    padding: 15px;
+
+    border-radius: 14px;
+
+    background: var(--purple);
+
+    color: white;
+
+    font-size: 16px;
+
+    font-weight: bold;
+}
+
+.auth-card a {
+    color: var(--purple);
+    font-weight: bold;
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
 
 @media (max-width: 600px) {
 
+    body {
+        overflow-x: hidden;
+        padding-bottom: 82px;
+    }
+
+    /* HEADER */
+
     .header {
+        height: 76px;
         padding: 0 15px;
     }
 
     .logo {
         font-size: 24px;
+        gap: 10px;
     }
 
-    .container {
-        padding: 22px 12px;
-    }
-
-    .page-title {
-        font-size: 32px;
-    }
-
-    .card {
-        border-radius: 22px;
-        padding: 18px;
-    }
-
-    .publish-button {
-        padding: 11px 17px;
-    }
-  }
-
-/* CORRECTIONS MOBILE */
-
-.create-post {
-    min-width: 0;
-}
-
-.post-area {
-    min-width: 0;
-    width: 100%;
-}
-
-.post-input {
-    display: block;
-    width: 100%;
-    max-width: 100%;
-    min-width: 0;
-}
-
-.post-actions {
-    width: 100%;
-    max-width: 100%;
-    overflow-x: auto;
-    scrollbar-width: none;
-    flex-wrap: nowrap;
-}
-
-.post-actions::-webkit-scrollbar {
-    display: none;
-}
-
-.action-button,
-.publish-button {
-    flex-shrink: 0;
-}
-
-.moments {
-    width: 100%;
-    overflow-x: auto;
-    scrollbar-width: none;
-}
-
-.moments::-webkit-scrollbar {
-    display: none;
-}
-
-.moment {
-    flex-shrink: 0;
-}
-
-@media (max-width: 600px) {
-
-    .header {
-        width: 100%;
+    .logo-icon {
+        width: 46px;
+        height: 46px;
     }
 
     .header-actions {
@@ -432,166 +899,185 @@ button {
         font-size: 19px;
     }
 
+
+    /* CONTENU */
+
     .container {
         width: 100%;
         max-width: 100%;
+
+        padding: 22px 12px;
+
         overflow: hidden;
     }
+
+
+    /* TITRE */
+
+    .welcome-section {
+        padding: 0 12px;
+        margin-bottom: 26px;
+    }
+
+    .welcome-section h1 {
+        font-size: 32px;
+    }
+
+    .welcome-section p {
+        font-size: 18px;
+    }
+
+
+    /* CARTE PUBLICATION */
 
     .card {
         width: 100%;
         max-width: 100%;
+
+        border-radius: 22px;
+
+        padding: 18px;
     }
 
-    .create-post {
-        gap: 10px;
-    }
 
-    .avatar {
-        width: 44px;
-        min-width: 44px;
-        height: 44px;
-    }
+    /* IMPORTANT :
+       Avatar + petite barre sur UNE SEULE ligne.
+    */
 
-    .moment {
-        min-width: 135px;
-        height: 190px;
-    }
-}
-
-/* =========================
-   MOBILE — LINKORA
-========================= */
-
-@media (max-width: 600px) {
-
-    body {
-        overflow-x: hidden;
-    }
-
-    .composer {
-        width: 100%;
-        max-width: 100%;
-        overflow: hidden;
-    }
-
-    .composer-actions {
+    .create-post-top {
         display: flex;
+        align-items: center;
+
         gap: 10px;
+
+        width: 100%;
+    }
+
+    .create-post .avatar {
+        width: 48px;
+        min-width: 48px;
+        height: 48px;
+    }
+
+    .post-input-button {
+        height: 54px;
+
+        min-width: 0;
+
+        padding: 0 18px;
+
+        font-size: 16px;
+
+        border-radius: 18px;
+    }
+
+
+    /* BOUTONS */
+
+    .post-actions {
+        margin-top: 14px;
+
+        gap: 10px;
+
+        width: 100%;
+
         overflow-x: auto;
-        max-width: 100%;
-        padding-bottom: 5px;
-        scrollbar-width: none;
+
+        padding-bottom: 2px;
     }
 
-    .composer-actions::-webkit-scrollbar {
-        display: none;
+    .post-actions button {
+        height: 48px;
+
+        padding: 0 17px;
+
+        font-size: 16px;
     }
 
-    .composer-actions button {
-        flex: 0 0 auto;
-        white-space: nowrap;
+    .post-actions .publish-button {
+        padding: 0 20px;
     }
 
-    .moments,
-    .stories,
-    .story-list {
-        max-width: 100%;
-        overflow-x: auto;
-        scrollbar-width: none;
+
+    /* MOMENTS */
+
+    .moments-section {
+        margin-top: 28px;
     }
 
-    .moments::-webkit-scrollbar,
-    .stories::-webkit-scrollbar,
-    .story-list::-webkit-scrollbar {
-        display: none;
+    .section-heading {
+        padding: 0 12px;
     }
 
-    .moment-card,
-    .story-card {
-        flex: 0 0 255px;
+    .section-heading h2 {
+        font-size: 25px;
     }
-}
 
-.auth-page {
-    min-height: 100vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 30px 15px;
-}
+    .moments-list {
+        width: 100%;
 
-.auth-card {
-    width: 100%;
-    max-width: 430px;
-    background: white;
-    border-radius: 25px;
-    padding: 30px;
-    box-shadow: 0 8px 30px rgba(0,0,0,0.08);
-    text-align: center;
-}
+        padding-left: 12px;
+        padding-right: 12px;
 
-.auth-logo {
-    width: 70px;
-    height: 70px;
-    margin: 0 auto 20px;
-    border-radius: 20px;
-    background: #7c3aed;
-    color: white;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 35px;
-    font-weight: bold;
-}
+        gap: 12px;
+    }
 
-.auth-card h1 {
-    font-size: 30px;
-    margin-bottom: 10px;
-}
+    .moment-card {
+        flex: 0 0 198px;
+        height: 275px;
+    }
 
-.auth-card p {
-    color: #777481;
-    margin-bottom: 25px;
-}
 
-.auth-card form {
-    display: flex;
-    flex-direction: column;
-    gap: 14px;
-}
+    /* PUBLICATIONS */
 
-.auth-card input {
-    width: 100%;
-    padding: 15px;
-    border: 1px solid #e8e5ef;
-    border-radius: 14px;
-    background: #f7f6fb;
-    font-size: 16px;
-    outline: none;
-}
+    .feed-section {
+        margin-top: 32px;
+    }
 
-.auth-card input:focus {
-    border-color: #7c3aed;
-}
+    .post-card {
+        border-radius: 22px;
+    }
 
-.auth-card button {
-    width: 100%;
-    padding: 15px;
-    border-radius: 14px;
-    background: #7c3aed;
-    color: white;
-    font-size: 16px;
-    font-weight: bold;
-}
+    .post-header {
+        padding: 20px;
+    }
 
-.auth-card a {
-    color: #7c3aed;
-    font-weight: bold;
-}
+    .post-content {
+        padding: 0 20px 20px;
+    }
 
-@media (max-width: 600px) {
+    .post-stats {
+        padding: 0 20px 14px;
+
+        gap: 12px;
+
+        font-size: 13px;
+    }
+
+    .post-buttons {
+        padding: 13px 5px;
+    }
+
+    .post-buttons button {
+        font-size: 13px;
+    }
+
+
+    /* NAVIGATION */
+
+    .bottom-nav {
+        height: 78px;
+    }
+
+    .create-nav {
+        width: 62px;
+        height: 62px;
+    }
+
+
+    /* AUTH */
+
     .auth-card {
         padding: 25px 18px;
     }
-}
+    }
