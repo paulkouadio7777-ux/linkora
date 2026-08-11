@@ -1,1 +1,89 @@
+<!DOCTYPE html>
+<html lang="fr">
 
+<head>
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <meta
+        name="theme-color"
+        content="#ffffff"
+    >
+
+    <title>{% block title %}Linkora{% endblock %}</title>
+
+    <link
+        rel="stylesheet"
+        href="{{ url_for('static', filename='css/linkora.css') }}"
+    >
+</head>
+
+<body>
+
+    <!-- BARRE SUPÉRIEURE -->
+    <header class="topbar">
+
+        <a href="/" class="brand">
+            <span class="brand-icon">L</span>
+            <span class="brand-name">Linkora</span>
+        </a>
+
+        <div class="top-actions">
+
+            <button class="icon-button" type="button" aria-label="Rechercher">
+                ⌕
+            </button>
+
+            <button class="icon-button notification-button" type="button" aria-label="Notifications">
+                ♡
+            </button>
+
+        </div>
+
+    </header>
+
+
+    <!-- CONTENU DES PAGES -->
+    <main class="main-content">
+
+        {% block content %}{% endblock %}
+
+    </main>
+
+
+    <!-- NAVIGATION PRINCIPALE UNIQUEMENT EN BAS -->
+    <nav class="bottom-navigation">
+
+        <a href="/" class="nav-item active">
+            <span class="nav-icon">⌂</span>
+            <span>Accueil</span>
+        </a>
+
+        <a href="#" class="nav-item">
+            <span class="nav-icon">◇</span>
+            <span>Explorer</span>
+        </a>
+
+        <button class="create-button" type="button">
+            <span>＋</span>
+        </button>
+
+        <a href="#" class="nav-item">
+            <span class="nav-icon">◌</span>
+            <span>Messages</span>
+        </a>
+
+        <a href="#" class="nav-item">
+            <span class="nav-icon">○</span>
+            <span>Profil</span>
+        </a>
+
+    </nav>
+
+</body>
+
+  </html>
