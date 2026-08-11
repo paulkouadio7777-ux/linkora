@@ -33,7 +33,10 @@ with app.app_context():
 
 @app.route("/")
 def home():
-    return render_template("home.html")
+    if "user_id" in session:
+        return redirect(url_for("feed"))
+
+    return redirect(url_for("login"))
 
 
 @app.route("/register", methods=["GET", "POST"])
