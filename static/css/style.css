@@ -119,8 +119,15 @@ button {
 /* CREATION PUBLICATION */
 
 .create-post {
+    display: block;
+    width: 100%;
+}
+
+.create-post-top {
     display: flex;
+    align-items: center;
     gap: 14px;
+    width: 100%;
 }
 
 .avatar {
@@ -137,21 +144,20 @@ button {
     font-weight: bold;
 }
 
-.post-area {
+.post-input-button {
     flex: 1;
-}
-
-.post-input {
     width: 100%;
-    border: none;
+    height: 82px;
+    border: 1px solid var(--border);
     outline: none;
-    background: #f1eff6;
+    background: #f7f6fb;
     border-radius: 18px;
-    padding: 16px;
+    padding: 0 18px;
     font-size: 17px;
-    color: var(--text);
-    resize: none;
-    min-height: 120px;
+    color: var(--muted);
+    text-align: left;
+    display: flex;
+    align-items: center;
 }
 
 .post-actions {
@@ -159,24 +165,30 @@ button {
     align-items: center;
     gap: 10px;
     margin-top: 15px;
+    width: 100%;
     overflow-x: auto;
+    scrollbar-width: none;
 }
 
-.action-button {
+.post-actions::-webkit-scrollbar {
+    display: none;
+}
+
+.post-actions button {
     background: #f1eff6;
+    color: var(--text);
     border-radius: 18px;
     padding: 11px 18px;
     white-space: nowrap;
+    flex-shrink: 0;
 }
 
-.publish-button {
+.post-actions .publish-button {
     margin-left: auto;
     background: var(--purple);
     color: white;
-    border-radius: 16px;
-    padding: 12px 22px;
     font-weight: bold;
-}
+    }
 
 /* MOMENTS */
 
@@ -439,11 +451,6 @@ button {
         width: 44px;
         min-width: 44px;
         height: 44px;
-    }
-
-    .post-input {
-        min-height: 105px;
-        font-size: 16px;
     }
 
     .moment {
