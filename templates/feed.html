@@ -1,0 +1,272 @@
+{% extends "base.html" %}
+
+{% block title %}Accueil · Linkora{% endblock %}
+
+{% block content %}
+
+<!-- INTRODUCTION -->
+<section class="welcome-section">
+
+    <h1>Pour vous ✨</h1>
+
+    <p>
+        Découvrez ce qui se passe sur Linkora.
+    </p>
+
+</section>
+
+
+<!-- CRÉER UNE PUBLICATION -->
+<section class="card create-post">
+
+    <div class="create-post-top">
+
+        <div class="avatar">
+            L
+        </div>
+
+        <button
+            type="button"
+            class="post-input-button"
+        >
+            Quoi de neuf sur Linkora ?
+        </button>
+
+    </div>
+
+
+    <div class="post-actions">
+
+        <button type="button">
+            📷
+            <span>Photo</span>
+        </button>
+
+        <button type="button">
+            🎥
+            <span>Vidéo</span>
+        </button>
+
+        <button type="button">
+            😊
+            <span>Humeur</span>
+        </button>
+
+        <button
+            type="button"
+            class="publish-button"
+        >
+            Publier
+        </button>
+
+    </div>
+
+</section>
+
+
+<!-- MOMENTS -->
+<section class="moments-section">
+
+    <div class="section-heading">
+
+        <h2>Moments</h2>
+
+        <a href="#">
+            Voir tout
+        </a>
+
+    </div>
+
+
+    <div class="moments-list">
+
+        <div class="moment-card create-moment">
+
+            <div class="moment-add">
+                +
+            </div>
+
+            <strong>
+                Ajouter
+            </strong>
+
+        </div>
+
+
+        <div class="moment-card">
+            <div class="moment-avatar">A</div>
+
+            <span>
+                Alex
+            </span>
+        </div>
+
+
+        <div class="moment-card">
+            <div class="moment-avatar">M</div>
+
+            <span>
+                Maya
+            </span>
+        </div>
+
+
+        <div class="moment-card">
+            <div class="moment-avatar">K</div>
+
+            <span>
+                Kevin
+            </span>
+        </div>
+
+
+        <div class="moment-card">
+            <div class="moment-avatar">S</div>
+
+            <span>
+                Sarah
+            </span>
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- FIL -->
+<section class="feed-section">
+
+    <div class="section-heading">
+
+        <h2>Publications</h2>
+
+        <button
+            type="button"
+            class="filter-button"
+        >
+            Pour vous ▾
+        </button>
+
+    </div>
+
+
+    <!-- PUBLICATION -->
+    <article class="post-card">
+
+        <div class="post-header">
+
+            <div class="post-user">
+
+                <div class="avatar">
+                    B
+                </div>
+
+                <div>
+
+                    <strong>
+                        Black Friday
+                    </strong>
+
+                    <small>
+                        @blackfriday · il y a 15 min
+                    </small>
+
+                </div>
+
+            </div>
+
+
+            <button
+                type="button"
+                class="more-button"
+            >
+                •••
+            </button>
+
+        </div>
+
+
+        <div class="post-content">
+
+            <p>
+                Bienvenue sur Linkora 🚀
+            </p>
+
+        </div>
+
+
+        <div class="post-stats">
+
+            <span>
+                ❤️ 24
+            </span>
+
+            <span>
+                💬 8 commentaires
+            </span>
+
+            <span>
+                🔄 3
+            </span>
+
+        </div>
+
+
+        <div class="post-buttons">
+
+            <button type="button">
+                🤍
+                <span>J'aime</span>
+            </button>
+
+            <button type="button">
+                💬
+                <span>Commenter</span>
+            </button>
+
+            <button type="button">
+                🔄
+                <span>Reposter</span>
+            </button>
+
+            <button type="button">
+                ↗
+                <span>Partager</span>
+            </button>
+
+        </div>
+
+
+        <div class="comment-preview">
+
+            <div class="small-avatar">
+                M
+            </div>
+
+            <div>
+
+                <strong>
+                    Maya
+                </strong>
+
+                <p>
+                    J'aime beaucoup cette nouvelle interface 😍
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <button
+            type="button"
+            class="view-comments"
+        >
+            Voir les 8 commentaires
+        </button>
+
+    </article>
+
+</section>
+
+{% endblock %}
