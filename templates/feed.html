@@ -5,9 +5,12 @@
 {% block content %}
 
 <!-- INTRODUCTION -->
+
 <section class="welcome-section">
 
-    <h1>Pour vous ✨</h1>
+    <h1>
+        Pour vous ✨
+    </h1>
 
     <p>
         Découvrez ce qui se passe sur Linkora.
@@ -44,23 +47,17 @@
 
         <div class="post-actions">
 
-            <button
-                type="button"
-            >
+            <button type="button">
                 📷
                 <span>Photo</span>
             </button>
 
-            <button
-                type="button"
-            >
+            <button type="button">
                 🎥
                 <span>Vidéo</span>
             </button>
 
-            <button
-                type="button"
-            >
+            <button type="button">
                 😊
                 <span>Humeur</span>
             </button>
@@ -80,11 +77,14 @@
 
 
 <!-- MOMENTS -->
+
 <section class="moments-section">
 
     <div class="section-heading">
 
-        <h2>Moments</h2>
+        <h2>
+            Moments
+        </h2>
 
         <a href="#">
             Voir tout
@@ -109,38 +109,54 @@
 
 
         <div class="moment-card">
-            <div class="moment-avatar">A</div>
+
+            <div class="moment-avatar">
+                A
+            </div>
 
             <span>
                 Alex
             </span>
+
         </div>
 
 
         <div class="moment-card">
-            <div class="moment-avatar">M</div>
+
+            <div class="moment-avatar">
+                M
+            </div>
 
             <span>
                 Maya
             </span>
+
         </div>
 
 
         <div class="moment-card">
-            <div class="moment-avatar">K</div>
+
+            <div class="moment-avatar">
+                K
+            </div>
 
             <span>
                 Kevin
             </span>
+
         </div>
 
 
         <div class="moment-card">
-            <div class="moment-avatar">S</div>
+
+            <div class="moment-avatar">
+                S
+            </div>
 
             <span>
                 Sarah
             </span>
+
         </div>
 
     </div>
@@ -149,11 +165,14 @@
 
 
 <!-- FIL -->
+
 <section class="feed-section">
 
     <div class="section-heading">
 
-        <h2>Publications</h2>
+        <h2>
+            Publications
+        </h2>
 
         <button
             type="button"
@@ -165,7 +184,10 @@
     </div>
 
 
-    <!-- PUBLICATION -->
+    <!-- PUBLICATIONS RÉELLES -->
+
+    {% for post in posts %}
+
     <article class="post-card">
 
         <div class="post-header">
@@ -173,17 +195,17 @@
             <div class="post-user">
 
                 <div class="avatar">
-                    B
+                    {{ post.username[0]|upper }}
                 </div>
 
                 <div>
 
                     <strong>
-                        Black Friday
+                        {{ post.username }}
                     </strong>
 
                     <small>
-                        @blackfriday · il y a 15 min
+                        @{{ post.username }}
                     </small>
 
                 </div>
@@ -204,25 +226,8 @@
         <div class="post-content">
 
             <p>
-                Bienvenue sur Linkora 🚀
+                {{ post.content }}
             </p>
-
-        </div>
-
-
-        <div class="post-stats">
-
-            <span>
-                ❤️ 24
-            </span>
-
-            <span>
-                💬 8 commentaires
-            </span>
-
-            <span>
-                🔄 3
-            </span>
 
         </div>
 
@@ -230,57 +235,66 @@
         <div class="post-buttons">
 
             <button type="button">
+
                 🤍
-                <span>J'aime</span>
+
+                <span>
+                    J'aime
+                </span>
+
             </button>
 
+
             <button type="button">
+
                 💬
-                <span>Commenter</span>
+
+                <span>
+                    Commenter
+                </span>
+
             </button>
 
+
             <button type="button">
+
                 🔄
-                <span>Reposter</span>
+
+                <span>
+                    Reposter
+                </span>
+
             </button>
+
 
             <button type="button">
+
                 ↗
-                <span>Partager</span>
+
+                <span>
+                    Partager
+                </span>
+
             </button>
 
         </div>
-
-
-        <div class="comment-preview">
-
-            <div class="small-avatar">
-                M
-            </div>
-
-            <div>
-
-                <strong>
-                    Maya
-                </strong>
-
-                <p>
-                    J'aime beaucoup cette nouvelle interface 😍
-                </p>
-
-            </div>
-
-        </div>
-
-
-        <button
-            type="button"
-            class="view-comments"
-        >
-            Voir les 8 commentaires
-        </button>
 
     </article>
+
+
+    {% else %}
+
+
+    <div class="card">
+
+        <p>
+            Aucune publication pour le moment.
+        </p>
+
+    </div>
+
+
+    {% endfor %}
 
 </section>
 
