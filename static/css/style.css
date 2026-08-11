@@ -354,3 +354,100 @@ button {
         padding: 11px 17px;
     }
   }
+
+/* CORRECTIONS MOBILE */
+
+.create-post {
+    min-width: 0;
+}
+
+.post-area {
+    min-width: 0;
+    width: 100%;
+}
+
+.post-input {
+    display: block;
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+}
+
+.post-actions {
+    width: 100%;
+    max-width: 100%;
+    overflow-x: auto;
+    scrollbar-width: none;
+    flex-wrap: nowrap;
+}
+
+.post-actions::-webkit-scrollbar {
+    display: none;
+}
+
+.action-button,
+.publish-button {
+    flex-shrink: 0;
+}
+
+.moments {
+    width: 100%;
+    overflow-x: auto;
+    scrollbar-width: none;
+}
+
+.moments::-webkit-scrollbar {
+    display: none;
+}
+
+.moment {
+    flex-shrink: 0;
+}
+
+@media (max-width: 600px) {
+
+    .header {
+        width: 100%;
+    }
+
+    .header-actions {
+        gap: 7px;
+    }
+
+    .header-button {
+        width: 42px;
+        height: 42px;
+        font-size: 19px;
+    }
+
+    .container {
+        width: 100%;
+        max-width: 100%;
+        overflow: hidden;
+    }
+
+    .card {
+        width: 100%;
+        max-width: 100%;
+    }
+
+    .create-post {
+        gap: 10px;
+    }
+
+    .avatar {
+        width: 44px;
+        min-width: 44px;
+        height: 44px;
+    }
+
+    .post-input {
+        min-height: 105px;
+        font-size: 16px;
+    }
+
+    .moment {
+        min-width: 135px;
+        height: 190px;
+    }
+}
