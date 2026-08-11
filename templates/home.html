@@ -1,16 +1,290 @@
 <!DOCTYPE html>
 <html lang="fr">
+
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
     <title>Linkora</title>
+
+    <link
+        rel="stylesheet"
+        href="{{ url_for('static', filename='css/style.css') }}"
+    >
 </head>
 
 <body>
 
-    <h1>Linkora 🔗</h1>
+<header class="header">
 
-    <p>Bienvenue sur Linkora.</p>
+    <a href="/" class="logo">
+        <div class="logo-icon">L</div>
+        <span>Linkora</span>
+    </a>
+
+    <div class="header-actions">
+
+        <a href="#" class="header-button">
+            🔎
+        </a>
+
+        <a href="#" class="header-button">
+            ♡
+        </a>
+
+        <a href="#" class="header-button">
+            👤
+        </a>
+
+    </div>
+
+</header>
+
+
+<main class="container">
+
+    <h1 class="page-title">
+        Pour vous
+    </h1>
+
+    <p class="page-subtitle">
+        Découvrez ce qui se passe sur Linkora
+    </p>
+
+
+    <!-- CREATION PUBLICATION -->
+
+    <div class="card">
+
+        <div class="create-post">
+
+            <div class="avatar">
+                L
+            </div>
+
+            <div class="post-area">
+
+                <textarea
+                    class="post-input"
+                    placeholder="Quoi de neuf ?"
+                ></textarea>
+
+                <div class="post-actions">
+
+                    <button class="action-button">
+                        📷 Photo
+                    </button>
+
+                    <button class="action-button">
+                        🎬 Vidéo
+                    </button>
+
+                    <button class="action-button">
+                        😊 Humeur
+                    </button>
+
+                    <button class="publish-button">
+                        Publier
+                    </button>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- MOMENTS -->
+
+    <div class="section-title">
+
+        <h2>
+            Moments
+        </h2>
+
+        <a href="#">
+            Voir tout
+        </a>
+
+    </div>
+
+
+    <div class="moments">
+
+        <div class="moment add">
+
+            <div class="moment-icon">
+                +
+            </div>
+
+            <span>
+                Ajouter
+            </span>
+
+        </div>
+
+
+        <div class="moment">
+
+            <div class="moment-icon">
+                L
+            </div>
+
+            <span>
+                Linkora
+            </span>
+
+        </div>
+
+
+        <div class="moment">
+
+            <div class="moment-icon">
+                ✨
+            </div>
+
+            <span>
+                Découverte
+            </span>
+
+        </div>
+
+
+        <div class="moment">
+
+            <div class="moment-icon">
+                🔥
+            </div>
+
+            <span>
+                Tendance
+            </span>
+
+        </div>
+
+    </div>
+
+
+    <!-- PUBLICATION -->
+
+    <div class="section-title">
+
+        <h2>
+            Publications
+        </h2>
+
+    </div>
+
+
+    <article class="card">
+
+        <div class="post-header">
+
+            <div class="avatar">
+                L
+            </div>
+
+            <div>
+
+                <div class="post-user">
+                    Linkora
+                </div>
+
+                <div class="post-date">
+                    @linkora · maintenant
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <p class="post-content">
+            Bienvenue sur Linkora 🚀
+        </p>
+
+
+        <div class="post-footer">
+
+            <button>
+                ♡ J'aime
+            </button>
+
+            <button>
+                💬 Commenter
+            </button>
+
+            <button>
+                ↗ Partager
+            </button>
+
+        </div>
+
+    </article>
+
+</main>
+
+
+<!-- NAVIGATION -->
+
+<nav class="bottom-nav">
+
+    <a href="/" class="nav-item active">
+
+        <span>⌂</span>
+
+        <small>
+            Accueil
+        </small>
+
+    </a>
+
+
+    <a href="#" class="nav-item">
+
+        <span>◇</span>
+
+        <small>
+            Explorer
+        </small>
+
+    </a>
+
+
+    <a href="#" class="create-nav">
+        +
+    </a>
+
+
+    <a href="#" class="nav-item">
+
+        <span>◌</span>
+
+        <small>
+            Messages
+        </small>
+
+    </a>
+
+
+    <a href="#" class="nav-item">
+
+        <span>◉</span>
+
+        <small>
+            Profil
+        </small>
+
+    </a>
+
+</nav>
 
 </body>
-</html>
+
+    </html>
