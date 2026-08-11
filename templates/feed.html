@@ -17,49 +17,64 @@
 
 
 <!-- CRÉER UNE PUBLICATION -->
+
 <section class="card create-post">
 
-    <div class="create-post-top">
+    <form
+        method="POST"
+        action="{{ url_for('feed') }}"
+    >
 
-        <div class="avatar">
-            L
+        <div class="create-post-top">
+
+            <div class="avatar">
+                {{ username[0]|upper }}
+            </div>
+
+            <textarea
+                name="content"
+                class="post-input"
+                placeholder="Quoi de neuf sur Linkora ?"
+                maxlength="1000"
+                required
+            ></textarea>
+
         </div>
 
-        <button
-            type="button"
-            class="post-input-button"
-        >
-            Quoi de neuf sur Linkora ?
-        </button>
 
-    </div>
+        <div class="post-actions">
 
+            <button
+                type="button"
+            >
+                📷
+                <span>Photo</span>
+            </button>
 
-    <div class="post-actions">
+            <button
+                type="button"
+            >
+                🎥
+                <span>Vidéo</span>
+            </button>
 
-        <button type="button">
-            📷
-            <span>Photo</span>
-        </button>
+            <button
+                type="button"
+            >
+                😊
+                <span>Humeur</span>
+            </button>
 
-        <button type="button">
-            🎥
-            <span>Vidéo</span>
-        </button>
+            <button
+                type="submit"
+                class="publish-button"
+            >
+                Publier
+            </button>
 
-        <button type="button">
-            😊
-            <span>Humeur</span>
-        </button>
+        </div>
 
-        <button
-            type="button"
-            class="publish-button"
-        >
-            Publier
-        </button>
-
-    </div>
+    </form>
 
 </section>
 
