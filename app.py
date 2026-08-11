@@ -22,6 +22,10 @@ class User(db.Model):
     email = db.Column(db.String(120), unique=True, nullable=False)
     password = db.Column(db.String(255), nullable=False)
 
+class Post(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
+    content = db.Column(db.Text, nullable=False)
+    username = db.Column(db.String(80), nullable=False)
 
 with app.app_context():
     db.create_all()
@@ -89,16 +93,35 @@ def login():
     return render_template("login.html")
 
 
-@app.route("/feed")
+@app.route("/feed", methods=["GET", "POST"])
 def feed():
 
     if "user_id" not in session:
         return redirect(url_for("login"))
 
+    if request.method == "POST":
+
+        content = request.form.get("content", "").strip()
+
+        if content:
+
+            post = Post(
+                content=content,
+                username=session.get("username")
+            )
+
+            db.session.add(post)
+            db.session.commit()
+
+        return redirect(url_for("feed"))
+
+    posts = Post.query.order_by(Post.id.desc()).all()
+
     return render_template(
         "feed.html",
-        username=session.get("username")
-    )
+        username=session.get("username"),
+        posts=posts
+        )
 
 
 @app.route("/logout")
