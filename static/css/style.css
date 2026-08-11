@@ -451,3 +451,57 @@ button {
         height: 190px;
     }
 }
+
+/* =========================
+   MOBILE — LINKORA
+========================= */
+
+@media (max-width: 600px) {
+
+    body {
+        overflow-x: hidden;
+    }
+
+    .composer {
+        width: 100%;
+        max-width: 100%;
+        overflow: hidden;
+    }
+
+    .composer-actions {
+        display: flex;
+        gap: 10px;
+        overflow-x: auto;
+        max-width: 100%;
+        padding-bottom: 5px;
+        scrollbar-width: none;
+    }
+
+    .composer-actions::-webkit-scrollbar {
+        display: none;
+    }
+
+    .composer-actions button {
+        flex: 0 0 auto;
+        white-space: nowrap;
+    }
+
+    .moments,
+    .stories,
+    .story-list {
+        max-width: 100%;
+        overflow-x: auto;
+        scrollbar-width: none;
+    }
+
+    .moments::-webkit-scrollbar,
+    .stories::-webkit-scrollbar,
+    .story-list::-webkit-scrollbar {
+        display: none;
+    }
+
+    .moment-card,
+    .story-card {
+        flex: 0 0 255px;
+    }
+}
