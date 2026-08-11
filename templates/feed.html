@@ -4,159 +4,90 @@
 
 {% block content %}
 
-<!-- INTRODUCTION -->
-
 <section class="welcome-section">
+    <h1>Pour vous ✨</h1>
+    <p>Découvrez ce qui se passe sur Linkora.</p>
+</section>
 
-    <h1>
-        Pour vous ✨
-    </h1>
+<section class="create-post card">
 
-    <p>
-        Découvrez ce qui se passe sur Linkora.
-    </p>
+    <div class="create-post-top">
+
+        <div class="avatar">
+            {{ username[0]|upper if username else "L" }}
+        </div>
+
+        <div class="post-input">
+            Quoi de neuf sur Linkora ?
+        </div>
+
+    </div>
+
+    <div class="post-actions">
+
+        <button type="button" class="action-button">
+            📷 <span>Photo</span>
+        </button>
+
+        <button type="button" class="action-button">
+            🎥 <span>Vidéo</span>
+        </button>
+
+        <button type="button" class="action-button">
+            😊 <span>Humeur</span>
+        </button>
+
+        <button type="button" class="publish-button">
+            Publier
+        </button>
+
+    </div>
 
 </section>
 
-
-<!-- CRÉER UNE PUBLICATION -->
-
-<section class="card create-post">
-
-    <form
-        method="POST"
-        action="{{ url_for('feed') }}"
-    >
-
-        <div class="create-post-top">
-
-            <div class="avatar">
-                {{ username[0]|upper }}
-            </div>
-
-            <textarea
-                name="content"
-                class="post-input"
-                placeholder="Quoi de neuf sur Linkora ?"
-                maxlength="1000"
-                required
-            ></textarea>
-
-        </div>
-
-
-        <div class="post-actions">
-
-            <button type="button">
-                📷
-                <span>Photo</span>
-            </button>
-
-            <button type="button">
-                🎥
-                <span>Vidéo</span>
-            </button>
-
-            <button type="button">
-                😊
-                <span>Humeur</span>
-            </button>
-
-            <button
-                type="submit"
-                class="publish-button"
-            >
-                Publier
-            </button>
-
-        </div>
-
-    </form>
-
-</section>
-
-
-<!-- MOMENTS -->
 
 <section class="moments-section">
 
     <div class="section-heading">
 
-        <h2>
-            Moments
-        </h2>
+        <h2>Moments</h2>
 
-        <a href="#">
-            Voir tout
-        </a>
+        <a href="#">Voir tout</a>
 
     </div>
-
 
     <div class="moments-list">
 
         <div class="moment-card create-moment">
 
-            <div class="moment-add">
-                +
-            </div>
+            <div class="moment-add">+</div>
 
-            <strong>
-                Ajouter
-            </strong>
+            <strong>Ajouter</strong>
 
         </div>
 
 
         <div class="moment-card">
-
-            <div class="moment-avatar">
-                A
-            </div>
-
-            <span>
-                Alex
-            </span>
-
+            <div class="moment-avatar">A</div>
+            <span>Alex</span>
         </div>
 
 
         <div class="moment-card">
-
-            <div class="moment-avatar">
-                M
-            </div>
-
-            <span>
-                Maya
-            </span>
-
+            <div class="moment-avatar">M</div>
+            <span>Maya</span>
         </div>
 
 
         <div class="moment-card">
-
-            <div class="moment-avatar">
-                K
-            </div>
-
-            <span>
-                Kevin
-            </span>
-
+            <div class="moment-avatar">K</div>
+            <span>Kevin</span>
         </div>
 
 
         <div class="moment-card">
-
-            <div class="moment-avatar">
-                S
-            </div>
-
-            <span>
-                Sarah
-            </span>
-
+            <div class="moment-avatar">S</div>
+            <span>Sarah</span>
         </div>
 
     </div>
@@ -164,29 +95,18 @@
 </section>
 
 
-<!-- FIL -->
-
 <section class="feed-section">
 
     <div class="section-heading">
 
-        <h2>
-            Publications
-        </h2>
+        <h2>Publications</h2>
 
-        <button
-            type="button"
-            class="filter-button"
-        >
+        <button type="button" class="filter-button">
             Pour vous ▾
         </button>
 
     </div>
 
-
-    <!-- PUBLICATIONS RÉELLES -->
-
-    {% for post in posts %}
 
     <article class="post-card">
 
@@ -195,28 +115,22 @@
             <div class="post-user">
 
                 <div class="avatar">
-                    {{ post.username[0]|upper }}
+                    B
                 </div>
 
                 <div>
 
-                    <strong>
-                        {{ post.username }}
-                    </strong>
+                    <strong>Black Friday</strong>
 
                     <small>
-                        @{{ post.username }}
+                        @blackfriday · il y a 15 min
                     </small>
 
                 </div>
 
             </div>
 
-
-            <button
-                type="button"
-                class="more-button"
-            >
+            <button type="button" class="more-button">
                 •••
             </button>
 
@@ -226,8 +140,17 @@
         <div class="post-content">
 
             <p>
-                {{ post.content }}
+                Bienvenue sur Linkora 🚀
             </p>
+
+        </div>
+
+
+        <div class="post-stats">
+
+            <span>❤️ 24</span>
+            <span>💬 8 commentaires</span>
+            <span>🔄 3</span>
 
         </div>
 
@@ -235,66 +158,28 @@
         <div class="post-buttons">
 
             <button type="button">
-
                 🤍
-
-                <span>
-                    J'aime
-                </span>
-
+                <span>J'aime</span>
             </button>
 
-
             <button type="button">
-
                 💬
-
-                <span>
-                    Commenter
-                </span>
-
+                <span>Commenter</span>
             </button>
 
-
             <button type="button">
-
                 🔄
-
-                <span>
-                    Reposter
-                </span>
-
+                <span>Reposter</span>
             </button>
 
-
             <button type="button">
-
                 ↗
-
-                <span>
-                    Partager
-                </span>
-
+                <span>Partager</span>
             </button>
 
         </div>
 
     </article>
-
-
-    {% else %}
-
-
-    <div class="card">
-
-        <p>
-            Aucune publication pour le moment.
-        </p>
-
-    </div>
-
-
-    {% endfor %}
 
 </section>
 
